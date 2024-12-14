@@ -8,15 +8,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-100 font-sans">
+<body class="bg-sky-100 font-sans">
     <div class="container mx-auto p-6">
         <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">Intro to Ethers</h1>
         <div class="text-center">
             <button id="btnConnect"
-                class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition">Conectar
+                class="bg-blue-300 text-white px-6 py-2 rounded-md hover:bg-blue-400 transition">Conectar
                 wallet</button>
             <button id="btnDisconnect"
-                class="bg-red-500 text-white px-6 py-2 rounded-md hover:bg-red-600 transition mt-4"
+                class="bg-orange-300 text-white px-6 py-2 rounded-md hover:bg-orange-400 transition mt-4"
                 style="display:none;">Desconectar</button>
         </div>
         <p id="status" class="text-center text-gray-600 mt-4">Estado: Desconectado</p>
@@ -58,6 +58,7 @@
                 class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition mt-4">Enviar
                 Token</button>
         </div>
+        
 
 
     </div>
@@ -67,10 +68,10 @@
 
         let provider, signer, address, contract;
 
-        const TOKEN_ADDRESS = "0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8";
+        const TOKEN_ADDRESS = "0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8"; //direccion del contrato del token
 
         async function loadABI() {
-            const response = await fetch('https://gist.githubusercontent.com/veox/8800debbf56e24718f9f483e1e40c35c/raw/f853187315486225002ba56e5283c1dba0556e6f/erc20.abi.json');
+            const response = await fetch('https://gist.githubusercontent.com/veox/8800debbf56e24718f9f483e1e40c35c/raw/f853187315486225002ba56e5283c1dba0556e6f/erc20.abi.json'); //direccion de la ABI del contrato
             const abi = await response.json();
             return abi;
         }
